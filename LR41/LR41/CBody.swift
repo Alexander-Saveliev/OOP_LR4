@@ -12,8 +12,8 @@ class CBody {
     private let level  : Int
     
     init(withDensity density: Double, level: Int, andVolume volume: Double) {
-        self.density = density
-        self.volume  = volume
+        self.density = abs(density)
+        self.volume  = abs(volume)
         self.level   = level
     }
     
@@ -37,8 +37,8 @@ class CBody {
         print("+-------------+")
         print("   LEVEL ", level)
         print("+-------------+")
-        print("Density   : ", density)
-        print("Volume    : ", volume)
-        print("Mass      : ", getMass())
+        print("Density   : ", String(format: "%.03f", density))
+        print("Volume    : ", String(format: "%.03f", density))
+        print("Mass      : ", String(format: "%.03f", getMass()))
     }
 }

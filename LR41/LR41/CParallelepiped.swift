@@ -12,13 +12,13 @@ class CParallelepiped: CBody {
     private let depth : Double
     
     init(withDensity density: Double, level: Int, width: Double, height: Double, depth: Double) {
-        self.width  = width
-        self.height = height
-        self.depth  = depth
+        self.width  = abs(width)
+        self.height = abs(height)
+        self.depth  = abs(depth)
         
-        let volume = width * height * depth;
+        let volume = self.width * self.height * self.depth;
         
-        super.init(withDensity: density, level: level, andVolume: volume)
+        super.init(withDensity: abs(density), level: level, andVolume: volume)
     }
     
     init?(withLevel level: Int) {
@@ -53,9 +53,9 @@ class CParallelepiped: CBody {
     
     override func printDescription() {
         super.printDescription()
-        print("Width     : ", width)
-        print("Height    : ", height)
-        print("Depth     : ", depth)
+        print("Width     : ", String(format: "%.03f", width))
+        print("Height    : ", String(format: "%.03f", height))
+        print("Depth     : ", String(format: "%.03f", depth))
         print("Parallelepiped")
         print()
     }

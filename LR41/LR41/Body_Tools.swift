@@ -43,6 +43,12 @@ func getListOfBodiesOfLevel(_ level: Int) -> [CBody] {
             }
         case .compound:
             bodies.append(CCompound(withLevel: level + 1))
+        case .heaviest:
+            if let heaviest = getTheHeviestBodyFromList(bodies) {
+                heaviest.printDescription()
+            } else {
+                print("Can't find heaviest body")
+            }
         default:
             break
         }
@@ -51,5 +57,17 @@ func getListOfBodiesOfLevel(_ level: Int) -> [CBody] {
     }
     
     return bodies
+}
+
+func getTheHeviestBodyFromList(_ bodies: [CBody]) -> CBody? {
+    var currentHeaviest: CBody?
+    
+    for body in bodies {
+        if currentHeaviest == nil || body.getMass() > currentHeaviest!.getMass() {
+            currentHeaviest = body
+        }
+    }
+    
+    return currentHeaviest
 }
 

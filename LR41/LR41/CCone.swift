@@ -13,12 +13,12 @@ class CCone: CBody {
     private let height: Double
     
     init(withDensity density: Double, baseRadius radius: Double, level: Int, andHeight height: Double) {
-        let volume = (1 / 3) * .pi * pow(radius, 2) * height
+        self.radius = abs(radius)
+        self.height = abs(height)
         
-        self.radius = radius
-        self.height = height
+        let volume = (1 / 3) * .pi * pow(self.radius, 2) * self.height
         
-        super.init(withDensity: density, level: level, andVolume: volume)
+        super.init(withDensity: abs(density), level: level, andVolume: volume)
     }
     
     init?(withLevel level: Int) {
@@ -47,8 +47,8 @@ class CCone: CBody {
     
     override func printDescription() {
         super.printDescription()
-        print("BaseRadius: ", radius)
-        print("Height    : ", height)
+        print("BaseRadius: ", String(format: "%.03f", radius))
+        print("Height    : ", String(format: "%.03f", height))
         print("Cone")
         print()
     }

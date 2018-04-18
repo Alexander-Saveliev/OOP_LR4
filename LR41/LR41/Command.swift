@@ -13,5 +13,6 @@ enum Command: String {
     case cone
     case cylinder
     case compound
+    case heaviest
     case error
 }

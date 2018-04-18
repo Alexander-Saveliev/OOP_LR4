@@ -12,10 +12,10 @@ class CSphere: CBody {
     private let radius: Double
     
     init(withDensity density: Double, level: Int, andRadius radius: Double) {
-        self.radius = radius
-        let volume  = (4 / 3) * (.pi * pow(radius, 3))
+        self.radius = abs(radius)
+        let volume  = (4 / 3) * (.pi * pow(self.radius, 3))
         
-        super.init(withDensity: density, level: level, andVolume: volume)
+        super.init(withDensity: abs(density), level: level, andVolume: volume)
     }
     
     init?(withLevel level: Int) {
@@ -36,7 +36,7 @@ class CSphere: CBody {
     override func printDescription() {
 
         super.printDescription()
-        print("Radius    : ", radius)
+        print("Radius    : ", String(format: "%.03f", radius))
         print("Sphere")
         print()
     }
