@@ -65,6 +65,10 @@ func readingFromInput() -> [Body] {
             if let heaviest = getTheHeviestBodyFromList(bodies) {
                 print(heaviest.toStrint())
             }
+        case .light:
+            if let light = getTheLightWeightInWhaterFromList(bodies) {
+                print(light.toStrint())
+            }
         default:
             break
         }
@@ -103,6 +107,23 @@ func getTheHeviestBodyFromList(_ bodies: [Body]) -> Body? {
     }
     
     return currentHeaviest
+}
+
+func getTheLightWeightInWhaterFromList(_ bodies: [Body]) -> Body? {
+    let whaterDensity = 1000.0
+    var currentLight: Body?
+    var currentMass : Double!
+    
+    for body in bodies {
+        let mass = body.getVolume() * (body.getDensity() - whaterDensity)
+        
+        if currentLight == nil || mass < currentMass {
+            currentLight = body
+            currentMass  = mass
+        }
+    }
+    
+    return currentLight
 }
 
 func readDoubleWithMessage(_ message: String) -> Double? {

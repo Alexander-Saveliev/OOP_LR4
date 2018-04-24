@@ -151,7 +151,34 @@ class test_LR41: XCTestCase {
         XCTAssertEqual(complexCompound.getMass(), 643.824, accuracy: 0.5)
     }
     
+    func testCompoundCycle() {
+        let a = Compound()
+        let b = Compound()
+        
+        XCTAssertTrue(a.addChieldBody(b))
+        XCTAssertFalse(a.addChieldBody(b))
+        XCTAssertFalse(b.addChieldBody(a))
+    }
+    
+    func testBigCompoundCycle() {
+        let a = Compound()
+        let b = Compound()
+        let c = Compound()
+        let d = Compound()
+        let e = Compound()
+        let f = Compound()
+        
+        XCTAssertTrue(a.addChieldBody(b))
+        XCTAssertTrue(b.addChieldBody(c))
+        XCTAssertTrue(c.addChieldBody(d))
+        XCTAssertTrue(d.addChieldBody(e))
+        XCTAssertTrue(e.addChieldBody(f))
+        XCTAssertFalse(f.addChieldBody(a))
+    }
+    
     // MARK: - Other usefull things -
+    
+    // MARK: - Heaviest -
     func testHeaviest() {
         let sphere = Sphere(withDensity: 10, radius: 1)
         let parallelepiped = Parallelepiped(withDensity: 10, width: 2, height: 3, depth: 4)
@@ -174,6 +201,37 @@ class test_LR41: XCTestCase {
     }
     
     func testHeaviestFromOne() {
+        let cone = Cone(withDensity: 5, baseRadius: 3, height: 4)
+        let list: [Body] = [cone]
+        
+        let heaviest = getTheHeviestBodyFromList(list)
+        
+        XCTAssertTrue(heaviest === cone)
+    }
+    
+    // MARK: - Light -
+    func testLight() {
+        let sphere = Sphere(withDensity: 10, radius: 1)
+        let parallelepiped = Parallelepiped(withDensity: 10, width: 2, height: 3, depth: 4)
+        let cone = Cone(withDensity: 5, baseRadius: 3, height: 4)
+        let cylinder = Cylinder(withDensity: 2, baseRadius: 3, height: 3)
+        
+        let list: [Body] = [sphere, parallelepiped, cone, cylinder]
+        
+        let light = getTheLightWeightInWhaterFromList(list)
+        
+        XCTAssertTrue(light === cylinder)
+    }
+    
+    func testLightFromNothing() {
+        let list = [Body]()
+        
+        let heaviest = getTheHeviestBodyFromList(list)
+        
+        XCTAssertNil(heaviest)
+    }
+    
+    func testLightFromOne() {
         let cone = Cone(withDensity: 5, baseRadius: 3, height: 4)
         let list: [Body] = [cone]
         

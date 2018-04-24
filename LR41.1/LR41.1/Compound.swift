@@ -60,6 +60,12 @@ class Compound: Body {
             return false
         }
         
+        for chield in self.parts {
+            if body === chield {
+                return false
+            }
+        }
+        
         while current.parent != nil {
             if current.parent! === body {
                 return false
