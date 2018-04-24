@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>LR41.xcscheme</key>
+		<key>LR41.1.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>LR41_tests.xcscheme</key>
+		<key>test_LR41.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
