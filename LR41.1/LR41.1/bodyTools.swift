@@ -80,7 +80,7 @@ func readingFromInput() -> [Body] {
     return bodies
 }
 
-func printReportOfList(_ bodies: [Body], andLevel level: Int) {
+func printReportOfList(_ bodies: [Body], withLevel level: Int) {
     for body in bodies {
         if type(of: body) == Compound.self {
             print("== LEVEL \(level) ==")
@@ -88,7 +88,7 @@ func printReportOfList(_ bodies: [Body], andLevel level: Int) {
             
             print()
             print("Chields")
-            printReportOfList((body as! Compound).getChields(), andLevel: level + 1)
+            printReportOfList((body as! Compound).getChields(), withLevel: level + 1)
             print("End Chields")
         } else {
             print(body.toStrint())

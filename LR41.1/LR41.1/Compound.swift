@@ -41,9 +41,9 @@ class Compound: Body {
         let str = """
         name   : Compound
         parts  : \(parts.count)
-        density: \(getDensity())
-        volume : \(getVolume())
-        mass   : \(getMass())
+        density: \(String(format: "%.03f", getDensity()))
+        volume : \(String(format: "%.03f", getVolume()))
+        mass   : \(String(format: "%.03f", getMass()))
         """
         
         return str
@@ -70,6 +70,7 @@ class Compound: Body {
             if current.parent! === body {
                 return false
             }
+
             current = current.parent!
         }
         
@@ -80,5 +81,13 @@ class Compound: Body {
         parts.append(body)
         
         return true
+    }
+    
+    deinit {
+        print("Удаляюсь")
+    }
+    
+    init() {
+        print("Появляюсь")
     }
 }

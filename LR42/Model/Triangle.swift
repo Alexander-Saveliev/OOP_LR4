@@ -60,4 +60,17 @@ class Triangle: SolidShape {
     }
     // End protocol methods
     
+    func getVertexOfNumber(_ number: Int) -> Point {
+        switch number {
+        case 1:
+            return vertex1
+        case 2:
+            return vertex2
+        case 3:
+            return vertex3
+        default:
+            return vertex1
+        }
+    }
+    
 }

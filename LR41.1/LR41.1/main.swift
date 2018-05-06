@@ -7,8 +7,24 @@
 //
 
 
-let bodies = readingFromInput()
+//let bodies = readingFromInput()
+//
+//print()
+//
+//printReportOfList(bodies, withLevel: 0)
+//
 
-print()
 
-printReportOfList(bodies, andLevel: 0)
+
+
+//let c = Compound()
+//let d = Compound()
+//let e = Compound()
+//let f = Compound()
+
+//a.addChieldBody(b)
+//XCTAssertTrue(b.addChieldBody(c))
+//XCTAssertTrue(c.addChieldBody(d))
+//XCTAssertTrue(d.addChieldBody(e))
+//XCTAssertTrue(e.addChieldBody(f))
+//XCTAssertFalse(f.addChieldBody(a))

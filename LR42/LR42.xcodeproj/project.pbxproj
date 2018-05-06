@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401022C3209050F40013BBEF /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401022C2209050F40013BBEF /* Field.swift */; };
 		40A1F291208F9D8900858DA4 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1F290208F9D8900858DA4 /* Rectangle.swift */; };
 		40A1F293208FA05E00858DA4 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1F292208FA05E00858DA4 /* Circle.swift */; };
 		40B1B9B0208F8424004AE17B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B1B9AF208F8424004AE17B /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		401022C2209050F40013BBEF /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		40A1F290208F9D8900858DA4 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 		40A1F292208FA05E00858DA4 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		40B1B9AC208F8424004AE17B /* LR42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LR42.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,11 +74,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		401022C1209050D20013BBEF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40B1B9B3208F8424004AE17B /* Main.storyboard */,
+				40B1B9B6208F8425004AE17B /* Assets.xcassets */,
+				40B1B9B8208F8425004AE17B /* LaunchScreen.storyboard */,
+				401022C2209050F40013BBEF /* Field.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		401022C4209058910013BBEF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40B1B9B1208F8424004AE17B /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		40B1B9A3208F8424004AE17B = {
 			isa = PBXGroup;
 			children = (
-				40B1B9CF208F842B004AE17B /* Model */,
 				40B1B9AE208F8424004AE17B /* LR42 */,
+				401022C4209058910013BBEF /* ViewController */,
+				401022C1209050D20013BBEF /* View */,
+				40B1B9CF208F842B004AE17B /* Model */,
 				40B1B9C3208F8425004AE17B /* LR42Tests */,
 				40B1B9AD208F8424004AE17B /* Products */,
 			);
@@ -94,10 +117,6 @@
 		40B1B9AE208F8424004AE17B /* LR42 */ = {
 			isa = PBXGroup;
 			children = (
-				40B1B9B1208F8424004AE17B /* ViewController.swift */,
-				40B1B9B3208F8424004AE17B /* Main.storyboard */,
-				40B1B9B6208F8425004AE17B /* Assets.xcassets */,
-				40B1B9B8208F8425004AE17B /* LaunchScreen.storyboard */,
 				40B1B9BB208F8425004AE17B /* Info.plist */,
 			);
 			path = LR42;
@@ -233,6 +252,7 @@
 				40B1B9D5208F85CD004AE17B /* Point.swift in Sources */,
 				40B1B9D1208F845D004AE17B /* Shape.swift in Sources */,
 				40A1F291208F9D8900858DA4 /* Rectangle.swift in Sources */,
+				401022C3209050F40013BBEF /* Field.swift in Sources */,
 				40B1B9B0208F8424004AE17B /* AppDelegate.swift in Sources */,
 				40A1F293208FA05E00858DA4 /* Circle.swift in Sources */,
 				40B1B9D3208F84C2004AE17B /* SolidShape.swift in Sources */,

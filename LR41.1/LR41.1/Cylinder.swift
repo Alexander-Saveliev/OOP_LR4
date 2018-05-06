@@ -34,11 +34,11 @@ class Cylinder: Body {
     func toStrint() -> String {
         let str = """
         name   : Cylinder
-        density: \(density)
-        volume : \(getVolume())
-        mass   : \(getMass())
-        radius : \(baseRadius)
-        height : \(height)
+        density: \(String(format: "%.03f", density))
+        volume : \(String(format: "%.03f", getVolume()))
+        mass   : \(String(format: "%.03f", getMass()))
+        radius : \(String(format: "%.03f", baseRadius))
+        height : \(String(format: "%.03f", height))
         """
         
         return str

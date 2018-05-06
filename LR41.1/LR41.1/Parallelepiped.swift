@@ -35,12 +35,12 @@ class Parallelepiped: Body {
     func toStrint() -> String {
         let str = """
         name: Parallelepiped
-        density: \(density)
-        volume : \(getVolume())
-        mass   : \(getMass())
-        width  : \(width)
-        height : \(height)
-        depth  : \(depth)
+        density: \(String(format: "%.03f", density))
+        volume : \(String(format: "%.03f", getVolume()))
+        mass   : \(String(format: "%.03f", getMass()))
+        width  : \(String(format: "%.03f", width))
+        height : \(String(format: "%.03f", height))
+        depth  : \(String(format: "%.03f", depth))
         """
         
         return str

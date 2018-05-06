@@ -239,4 +239,13 @@ class test_LR41: XCTestCase {
         
         XCTAssertTrue(heaviest === cone)
     }
+    
+    func testTest() {
+        autoreleasepool {
+            let a = Compound()
+            let b = Compound()
+            
+            a.addChieldBody(b)
+        }
+    }
 }

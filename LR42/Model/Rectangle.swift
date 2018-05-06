@@ -60,7 +60,7 @@ class Rectangle: SolidShape {
     }
     
     func getRightBottom() -> Point {
-        return Point(withY: leftTop.y + height, andX: leftTop.x + width )
+        return Point(withY: leftTop.y + height, andX: leftTop.x + width)
     }
     
     func getWidth() -> Double {

@@ -32,14 +32,15 @@ class Sphere: Body {
     func toStrint() -> String {
         let str = """
         name: Sphere
-        density: \(density)
-        volume : \(getVolume())
-        mass   : \(getMass())
-        radius : \(radius)
+        density: \(String(format: "%.03f", density))
+        volume : \(String(format: "%.03f", getVolume()))
+        mass   : \(String(format: "%.03f", getMass()))
+        radius : \(String(format: "%.03f", radius))
         """
         
         return str
     }
+    
     
     func getRadius() -> Double {
         return radius
