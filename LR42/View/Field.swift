@@ -9,60 +9,40 @@
 import UIKit
 
 class Field: UIView {
-    private var lines      = [LineSegment]() {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    private var rectangles = [Rectangle]() {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    private var circles    = [Circle]() {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    private var triangles  = [Triangle]() {
+    private var shapes = [Shape]() {
         didSet {
             setNeedsDisplay()
         }
     }
     
     override func draw(_ rect: CGRect) {
-        print("update")
-        for line in lines {
-            drawOneLine(line)
-        }
-        
-        for rect in rectangles {
-            drawOneRect(rect)
-        }
-        
-        for circle in circles {
-            drawOneCircle(circle)
-        }
-        
-        for triangle in triangles {
-            drawOneTriangle(triangle)
+        for shape in shapes {
+            if let line = shape as? LineSegment {
+                drawOneLine(line)
+            } else if let rect = shape as? Rectangle {
+                drawOneRect(rect)
+            } else if let circle = shape as? Circle {
+                drawOneCircle(circle)
+            } else if let triangle = shape as? Triangle {
+                drawOneTriangle(triangle)
+            }
         }
     }
     
     func addLine(_ line: LineSegment) {
-        lines.append(line)
+        shapes.append(line as Shape)
     }
     
     func addRectangle(_ rect: Rectangle) {
-        rectangles.append(rect)
+        shapes.append(rect as Shape)
     }
     
     func addCircle(_ circle: Circle) {
-        circles.append(circle)
+        shapes.append(circle as Shape)
     }
     
     func addTriangle(_ triangle: Triangle) {
-        triangles.append(triangle)
+        shapes.append(triangle as Shape)
     }
     
     private func drawOneLine(_ line: LineSegment) {
@@ -113,7 +93,6 @@ class Field: UIView {
         let linePath = UIBezierPath()
         
         linePath.lineWidth = 2
-        
         
         linePath.move(to: CGPoint(x: triangle.getVertexOfNumber(1).x, y: triangle.getVertexOfNumber(1).y))
         linePath.addLine(to: CGPoint(x: triangle.getVertexOfNumber(2).x, y: triangle.getVertexOfNumber(2).y))

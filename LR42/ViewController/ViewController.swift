@@ -41,12 +41,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let circle = Circle(withCenter: Point(withY: 500, andX: 300), radius: 200, fillColor: UIColor.yellow, andOutlineColor: UIColor.black)
-        
-//        field.addCircle(circle)
-        
-}
+    }
 
 
     // line
@@ -331,7 +326,5 @@ class ViewController: UIViewController {
         
         self.present(alert, animated: true)
     }
-
-    
 }
 
